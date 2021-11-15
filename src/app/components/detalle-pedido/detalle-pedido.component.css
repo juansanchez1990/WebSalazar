@@ -1,0 +1,26 @@
+@media print {
+    .doNotPrint {
+        display: none !important;
+    }
+    .doPrint {
+        display: block !important;
+    }
+}
+
+.imgLogo {
+    margin-top: -25px;
+    width: 150px;
+    height: auto;
+}
+
+@media only screen and (min-width: 360px) and (max-width: 600px) {
+    .imgLogo {
+        margin-top: -20px;
+        width: 120px;
+        height: auto;
+    }
+}
+
+.lowercase {
+    text-transform: lowercase;
+}

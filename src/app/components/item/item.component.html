@@ -1,0 +1,21 @@
+<div class="single-new-arrival">
+    <div class="single-new-arrival-bg">
+        <img src="{{productos.imagen}}" alt="new-arrivals images">
+        <div class="single-new-arrival-bg-overlay"></div>
+
+        <div (click)="traerProducto(productos)" class="new-arrival-cart">
+            <p>
+                <span class="lnr lnr-cart"></span>
+                <a>add <span>to </span> cart</a>
+            </p>
+        </div>
+    </div>
+    <h5>{{productos.NombreProducto}}</h5>
+    <h6 *ngIf="Cliente.length===0">L. {{productos.PrecioAlDetalle}}</h6>
+    <h6 *ngIf=" HayCliente && Cliente[0].TipoCliente==='1'">L. {{productos.PrecioAlDetalle}}</h6>
+    <h6 *ngIf=" HayCliente && Cliente[0].TipoCliente==='2'">L. {{productos.PrecioRevendedor}}</h6>
+    <h6 *ngIf=" HayCliente && Cliente[0].TipoCliente==='3'">L. {{productos.PrecioMayorista}}</h6>
+    <button style="margin-left: 1.5em;" [disabled]="!hayCantidad" type="button" class="btn btn-danger m-5" (click)="restarProducto()"><i class="fa fa-minus"></i></button>
+    <button style="margin-left: 1.5em;" type="button" class="btn btn-danger m-5" (click)="sumProductos()"><i class="fa fa-plus"></i></button>
+    <div style="margin-left: 1.5em;" class="text-center"> {{counter}} </div>
+</div>

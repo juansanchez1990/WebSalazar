@@ -1,0 +1,34 @@
+<br>
+
+<br>
+<br>
+<div class="container">
+    <div class="new-arrivals-content ">
+
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th class="text-center" scope="col">Numero de Pedido</th>
+                    <th class="text-center" scope="col">Nombre Cliente</th>
+                    <th class="text-center" scope="col">Celular</th>
+                    <th class="text-center" scope="col">Fecha de pedido</th>
+                    <th class="text-center" scope="col">Detalles</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let pedido of PedidosInfo">
+                    <th class="text-center" scope="row">{{pedido.NumeroPedido}}</th>
+                    <td class="text-center">{{pedido.Nombre + " " + pedido.Apellidos}}</td>
+                    <td class="text-center">{{pedido.Celular}}</td>
+                    <td class="text-center">{{pedido.FechaPedido}}</td>
+                    <td class="text-center"><button (click)="enviarPedido(pedido)" type="button" class="btn btn-info"><i class="fa fa-eye"></i></button></td>
+
+                </tr>
+
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<app-footer></app-footer>

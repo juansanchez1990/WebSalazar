@@ -1,0 +1,44 @@
+<!-- Start Atribute Navigation -->
+<div class="attr-nav">
+    <ul>
+        <!-- <li class="search">
+                <a href="#"><span class="lnr lnr-magnifier"></span></a>
+            </li> -->
+
+        <!--/.search-->
+
+        <!--/.search-->
+
+
+        <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown">
+                <span class="lnr lnr-cart"></span>
+                <span class="badge badge-bg-1">{{Productos.length}}</span>
+            </a>
+            <ul class="dropdown-menu cart-list s-cate">
+
+
+                <!--/.single-cart-list -->
+                <li *ngFor="let producto of Productos" class="single-cart-list">
+                    <a class="photo"><img src="{{producto.imagen}}" class="cart-thumb" alt="image" /></a>
+                    <div class="cart-list-txt">
+                        <h6><a>{{producto.NombreProducto}}</a></h6>
+                        <p>{{producto.Cantidad}} x - <span class="price">L. {{producto.SubTotal}}</span></p>
+                    </div>
+                    <!--/.cart-list-txt-->
+                    <div (click)="delete(producto)" class="cart-close">
+                        <span class="lnr lnr-cross"></span>
+                    </div>
+                    <!--/.cart-close-->
+                </li>
+                <!--/.single-cart-list -->
+                <li class="total">
+                    <span>Total: L. {{TotalGeneral}}</span>
+                    <button routerLink="checkout" class="btn-cart pull-right">view cart</button>
+                </li>
+            </ul>
+        </li>
+        <!--/.dropdown-->
+    </ul>
+</div>
+<!--/.attr-nav-->

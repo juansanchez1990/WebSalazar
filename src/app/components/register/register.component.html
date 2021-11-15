@@ -1,0 +1,54 @@
+<br>
+
+<section id="feature" class="feature mt-5">
+
+    <div class="wrapper fadeInDown">
+        <div id="formContent">
+            <!-- Tabs Titles -->
+
+            <!-- Icon -->
+            <div class="fadeIn  first">
+                <img src="assets/images/Logo.png" id="icon" alt="User Icon" />
+            </div>
+            <br>
+            <!-- Login Form -->
+            <form [formGroup]="RegisterForm" (ngSubmit)="sendUser()">
+                <div class="col-sm-6">
+                    <input type="text" formControlName="Nombre" class="fadeIn second" name="login" placeholder="Nombre">
+                </div>
+                <div class="col-sm-6">
+                    <input type="text" formControlName="Apellidos" class="fadeIn second" placeholder="Apellidos">
+                </div>
+                <div class="col-sm-6">
+                    <input type="text" formControlName="Identidad" class="fadeIn second" name="" placeholder="Identidad">
+                </div>
+                <div class="col-sm-6">
+                    <input type="text" formControlName="Correo" class="fadeIn second" name="login" placeholder="Correo">
+                </div>
+                <div class="col-sm-6">
+                    <input type="password" formControlName="Password" class="fadeIn second" name="login" placeholder="Password">
+                </div>
+                <div class="col-sm-6">
+                    <input type="text" formControlName="Celular" class="fadeIn second" name="login" placeholder="Celular">
+                </div>
+                <div class="col-sm-12">
+                    <select id="inputState" (change)="onChange($any($event.target).value)" class="form-select display-block fadeIn third">
+                  <option [value] selected>Tipo de Cliente</option>
+                  <option [value] = 1>Normal</option>
+                  <option [value] = 2>Revendedor</option>
+                  <option [value] = 3>Mayorista</option>
+                </select>
+                </div>
+                <div class="col-sm-12">
+                    <textarea type="text" formControlName="Direccion" class="fadeIn second" name="login" placeholder="Dirección"></textarea>
+                </div>
+
+                <input type="submit" class="fadeIn fourth" value="Registrarse">
+            </form>
+
+
+
+        </div>
+    </div>
+</section>
+<app-footer></app-footer>

@@ -1,0 +1,97 @@
+<br>
+
+<br>
+<br>
+<div class="container">
+    <div class="new-arrivals-content ">
+        <div class="row">
+            <br>
+            <br>
+            <div class="col-sm-7 mt-2">
+                <h6 class="text-center">Tus Productos</h6>
+                <div class="table-responsive">
+                    <table class="table table-striped ">
+                        <thead>
+                            <tr>
+                                <th class="text-center" scope="col">Producto</th>
+                                <th class="text-center" scope="col">Imagen</th>
+                                <th class="text-center" scope="col">Cantidad</th>
+                                <th class="text-center" scope="col">Precio Unitario</th>
+                                <th class="text-center" scope="col">Talla</th>
+                                <th class="text-center" scope="col">Color</th>
+                                <th class="text-center" scope="col">Eliminar</th>
+                            </tr>
+                        </thead>
+                        <tbody *ngFor="let item of Items">
+                            <tr>
+                                <th class="text-center">{{item.NombreProducto}}</th>
+                                <th class="text-center">{{item.NombreProducto}}</th>
+                                <th class="text-center">{{item.Cantidad}}</th>
+                                <th class="text-center">{{item.Precio}}</th>
+                                <th class="text-center">{{item.Talla}}</th>
+                                <th class="text-center">{{item.Color}}</th>
+                                <th class="text-center"><button (click)="delete(item)" type="button" class="btn btn-danger"><i class="fa fa-times"></i></button></th>
+
+                            </tr>
+
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+                <div class="m-5">
+
+                    <h5>Sub-Total: {{SubtotalGeneral | currency:'L. '}} </h5>
+                    <h5>+ Impuesto: 15% </h5>
+                    <h5>+ Envío: {{Envio | currency:'L. '}} </h5>
+                    <h5>____________________________</h5>
+                    <h4>= Total: {{TotalGeneral | currency:'Lps '}} </h4>
+                </div>
+            </div>
+            <br>
+            <div class="col-sm-5">
+                <h6 class="text-center">Formulario de envío</h6>
+                <form [formGroup]="RegistroPedido" (ngSubmit)="registrarPedido(RegistroPedido.value)">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Nombre</label>
+                        <input [ngModel]="NombreModel" name="NombreModel" formControlName="Nombre" type="text" class="form-control" id="exampleInputEmail1" placeholder="Escriba aquí su nombre">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Apellido</label>
+                        <input [ngModel]="ApellidosModel" name="ApellidosModel" formControlName="Apellidos" type="text" class="form-control" id="exampleInputEmail1" placeholder="Escriba aquí su nombre">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Celular</label>
+                        <input [ngModel]="CelularModel" name="CelularModel" formControlName="Celular" type="text" class="form-control" id="exampleInputPassword1" placeholder="Escriba aquí su celular">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Correo</label>
+                        <input [ngModel]="EmailModel" name="EmailModel" formControlName="Email" type="email" class="form-control" id="exampleInputPassword1" placeholder="Escriba aquí su correo">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Dirección de envío</label>
+                        <textarea [ngModel]="DireccionModel" name="DireccionModel" formControlName="Direccion" type="text" class="form-control" id="exampleInputPassword1" placeholder="Escriba aquí su dirección de envío"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Comentarios</label>
+                        <textarea formControlName="Comentario" type="text" class="form-control" id="exampleInputPassword1" placeholder="Escriba aquí su dirección de envío"></textarea>
+                    </div>
+
+                    <div class="checkbox">
+                        <label>
+            <input (change)="checkCheckBoxvalue($event)" type="checkbox"> Recogeré en tienda
+          </label>
+                    </div>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </form>
+            </div>
+
+
+
+
+        </div>
+
+    </div>
+</div>
+<app-footer></app-footer>

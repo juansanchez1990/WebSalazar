@@ -1,0 +1,34 @@
+<br>
+
+<br>
+<br>
+<div class="container">
+    <div class="new-arrivals-content ">
+        <div *ngIf="idCategoria==1" class="alert alert-info" role="alert">
+            <h2 class="text-center">Productos para el área de <strong>calzado</strong></h2>
+        </div>
+        <div *ngIf="idCategoria==2" class="alert alert-info" role="alert">
+            <h2 class="text-center">Productos para el área de <strong>ropa</strong></h2>
+        </div>
+        <label class="radio-inline">
+          <input (change)="changeGender($event)"type="radio" name="inlineRadioOptions" id="inlineRadio1" value=0> Todos
+        </label>
+        <label class="radio-inline">
+          <input (change)="changeGender($event)"type="radio" name="inlineRadioOptions" id="inlineRadio1" value=1> Hombre
+        </label>
+        <label class="radio-inline">
+          <input (change)="changeGender($event)"t type="radio" name="inlineRadioOptions" id="inlineRadio2" value=2> Mujer
+        </label>
+        <label class="radio-inline">
+          <input (change)="changeGender($event)"t type="radio" name="inlineRadioOptions" id="inlineRadio3" value=3> Niño
+        </label>
+        <div class="row ">
+
+            <div *ngFor="let product of getProductosPorDepartamento() ">
+
+                <app-item class="col-md-3 col-sm-4" [productos]="product"></app-item>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

@@ -1,0 +1,29 @@
+<br>
+<section id="feature" class="feature mt-5">
+    <div class="wrapper fadeInDown">
+        <div id="formContent">
+            <!-- Tabs Titles -->
+
+            <!-- Icon -->
+            <div class="fadeIn first">
+                <img src="assets/images/Logo.png" id="icon" alt="User Icon" />
+            </div>
+
+            <!-- Login Form -->
+            <form [formGroup]="LoginForm" (ngSubmit)="sendDataUser()">
+                <input formControlName="Correo" type="text" id="login" class="fadeIn second" name="login" placeholder="Ingrese su correo">
+                <input formControlName="Password" type="password" id="password" class="fadeIn third" name="login" placeholder="Ingrese su contraseña">
+                <input type="submit" class="fadeIn fourth" value="Log In">
+            </form>
+
+            <!-- Remind Passowrd -->
+            <div id="formFooter">
+                <label>Aun no tiene usuario?</label>
+                <br>
+                <a [routerLink]="['/registro']" class="underlineHover"> Regístrese aquí</a>
+            </div>
+
+        </div>
+    </div>
+</section>
+<app-footer></app-footer>

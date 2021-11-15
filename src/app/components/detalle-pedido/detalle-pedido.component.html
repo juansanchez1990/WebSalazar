@@ -1,0 +1,72 @@
+<br>
+
+<br>
+<br>
+<div class="container">
+    <div class="new-arrivals-content ">
+
+
+        <div class="container-fluid" id="pedidoinfo">
+            <div class="mt-1 card">
+                <div class="card-header doNotPrint">
+                    <button (click)="onPrint()" class="btn btn-success ">Imprimir</button>
+                </div>
+                <br>
+                <br>
+                <div class="card-body">
+                    <img class="imgLogo" src="assets/images/Logo.png" alt="">
+                    <br>
+                    <br>
+                    <div class="row mb-2">
+                        <div class="col-lg-4 col-md-4">
+                            <h6>Numero de Pedido: #000{{DetallePedido.NumeroPedido}}</h6>
+                            <h6>Nombre Cliente: {{DetallePedido.Nombre + " " + DetallePedido.Apellidos}}</h6>
+                            <h6>Celular: {{DetallePedido.Celular}}</h6>
+                            <h6>Correo: {{DetallePedido.Email}}</h6>
+                            <h6>Recoger en Tienda: {{DetallePedido.RecogerTienda}}</h6>
+                            <h6>Total: {{DetallePedido.Total | currency:'Lps '}} </h6>
+
+
+
+                        </div>
+
+
+                    </div>
+
+
+
+
+                    <div class="table-responsive noPrin">
+                        <table class="table">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">Producto</th>
+                                    <th scope="col">Cantidad</th>
+                                    <th scope="col">Color</th>
+                                    <th scope="col">Talla</th>
+                                    <th scope="col">Codigo</th>
+                                    <th scope="col">imagen</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let item of DetallePedido.Productos">
+                                    <td>{{item.NombreProducto}}</td>
+                                    <td>{{item.Cantidad}}</td>
+                                    <td>{{item.Color}}</td>
+                                    <td>{{item.Talla}}</td>
+                                    <td>{{item.codigo}}</td>
+                                    <td><img height="50px" width="50px" [src]="item.imagen" alt=""></td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<app-footer class="doNotPrint"></app-footer>
