@@ -19,6 +19,7 @@ export class ItemComponent implements OnInit {
   constructor(private ShoeS:ShoeService, private router: Router, private LoginS:LoginServicesService) { }
 
   ngOnInit() {
+ 
 this.LoginS.CorreoCliente.subscribe(clienteCorreo=>{
   this.LoginS.getCuentas().subscribe(cuenta=>{
     let Cliente=cuenta;
@@ -120,8 +121,8 @@ this.LoginS.CorreoCliente.subscribe(clienteCorreo=>{
     let ProductoUnidad = {
       NombreProducto:Producto.NombreProducto,
       Talla:Producto.Talla,
-      codigo:Producto.codigo,
-      imagen:Producto.imagen,
+      codigo:Producto.Codigo,
+      imagen:Producto.Imagen,
       Color:Producto.Color,
       Cantidad:this.counter,
       Precio:this.Precio,

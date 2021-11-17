@@ -8,6 +8,8 @@ import { CheckoutComponent } from './components/checkout/checkout.component';
 import { AdministracionComponent } from './components/administracion/administracion.component';
 import { DetallePedidoComponent } from './components/detalle-pedido/detalle-pedido.component';
 import { ItemComponent } from './components/item/item.component';
+import { ItemsAdminComponent } from './components/items-admin/items-admin.component';
+import { AddItemComponent } from './components/items-admin/add-item/add-item.component';
 
 const routes: Routes = [
 {path: 'Home', component:HomeComponent},
@@ -18,7 +20,9 @@ const routes: Routes = [
 {path: 'checkout', component:CheckoutComponent},
 {path: 'admin', component:AdministracionComponent},
 {path: 'DetallePedido', component:DetallePedidoComponent},
-{path: 'item', component:ItemComponent}
+{path: 'item', component:ItemComponent},
+{path: 'itemAdmin', component:ItemsAdminComponent},
+{path: 'AddItem', component:AddItemComponent}
 
 ];
 

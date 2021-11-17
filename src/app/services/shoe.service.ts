@@ -62,7 +62,7 @@ export class ShoeService {
     return this.ProductosList;
   }
   addShoppingCart (Item:any){
-
+console.log('Item', Item)
 
     let temp =[] as any
       temp = this.ItemAComprar.getValue();

@@ -1,0 +1,35 @@
+<br>
+
+<br>
+<br>
+
+<br>
+
+
+<div class="new-arrivals-content ">
+
+
+
+    <button type="button" routerLink="/AddItem" class="btn btn-primary col-1 m-3">Añadir Producto</button>
+
+    <div class="main">
+        <h1>Responsive Card Grid Layout</h1>
+        <ul class="cards">
+            <li *ngFor="let producto of Productos" class="cards_item">
+                <div class="card">
+                    <div class="card_image"><img class="imagen" [src]="producto.Imagen"></div>
+                    <h4 class="text-center">{{producto.NombreProducto}}</h4>
+                    <div class="card_content">
+                        <button (click)="EnviarItemEditar(producto)" type="button" class="btn btn-danger col-6 ">Editar</button>
+                        <button type="button" class="btn btn-warning col-6 ">Mostrar</button>
+                    </div>
+                </div>
+            </li>
+
+
+
+
+
+        </ul>
+    </div>
+</div>

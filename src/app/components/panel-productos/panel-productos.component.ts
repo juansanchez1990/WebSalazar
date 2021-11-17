@@ -35,9 +35,8 @@ this.getProductos()
 
       this.Productos = productos;
 
-
+      console.log('productos', this.Productos)
       this.getProductosPorDepartamento();
-      //this.Productos = productos.filter(producto => producto.idCategoria === this.idCategoria);;
     })
   }
 
@@ -46,11 +45,11 @@ this.getProductos()
 
 
     if (!this.IdGenero || this.IdGenero===0 ) {
-      return this.Productos.filter((i:any) => i.idDepartamento === this.idCategoria );
+      return this.Productos.filter((i:any) => i.IdDepartamento === this.idCategoria );
     }
     if (this.IdGenero) {
 
-      return this.Productos.filter((i:any) => i.idDepartamento === this.idCategoria && i.Genero===this.IdGenero);
+      return this.Productos.filter((i:any) => i.IdDepartamento === this.idCategoria && i.Genero===this.IdGenero);
     }
 
 

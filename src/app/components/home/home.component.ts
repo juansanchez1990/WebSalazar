@@ -37,7 +37,7 @@ this.ShoeS.getDepartementos().subscribe(departamentos=>{
   }
 getProductosPorDepartamento(): any[] {
   if (this.departamentoSeleccionado) {
-    return this.Productos.filter((i:any) => i.idDepartamento === this.departamentoSeleccionado.Id);
+    return this.Productos.filter((i:any) => i.IdDepartamento === this.departamentoSeleccionado.Id);
   } else {
     return [];
   }

@@ -1,0 +1,106 @@
+<br>
+
+<br>
+<br>
+
+<br>
+
+<br>
+<br>
+
+<br>
+
+<div class="m-5">
+
+    <div class="card m-5">
+        <div class="card-header">
+            <h2 class="text-center">Añadir Productos</h2>
+        </div>
+        <div class="card-body">
+            <form [formGroup]="RegistroProducto" class="row g-3">
+
+                <div class="row mt-5">
+                    <div class="col">
+                        <input type="text" [(ngModel)]="NombreProductoEditar" name="NombreProductoEditar" formControlName="NombreProducto" class="form-control" placeholder="Nombre" aria-label="First name">
+                    </div>
+                    <div class="col">
+                        <input type="text" [(ngModel)]="DescripcionEditar" name="DescripcionEditar" formControlName="Descripcion" class="form-control" placeholder="Descripción" aria-label="Last name">
+                    </div>
+                    <div class="col">
+                        <input type="text" [(ngModel)]="ColorEditar" name="ColorEditar" formControlName="Color" class="form-control" placeholder="Color" aria-label="Last name">
+                    </div>
+                </div>
+
+                <div class="row mt-5">
+                    <div class="col">
+                        <input [(ngModel)]="TallaEditar" name="TallaEditar" formControlName="Talla" type="number" class="form-control" placeholder="Talla" aria-label="Last name">
+                    </div>
+                    <div class="col">
+                        <select (change)="CapturarIdGenero($event)" id="inputState" class="form-select">
+                            <option [value]=0  selected>Genero</option>
+                            <option [value]=1 >Hombre</option>
+                            <option [value]=2 >Mujer</option>
+                            <option [value]=3 >Niño</option>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <select (change)="CapturarMostrarWeb($event)" id="inputState" class="form-select">
+                            <option [value]=0   selected>Mostrar en la Web</option>
+                            <option [value]=1>Si</option>
+                            <option [value]=2 >No</option>
+                        </select> </div>
+                </div>
+                <div class="row mt-5">
+                    <div class="col">
+                        <input [(ngModel)]="PrecioAlDetalleEditar" name="PrecioAlDetalleEditar" type="number" formControlName="PrecioAlDetalle" class="form-control" placeholder="Precio al Detalle" aria-label="First name">
+                    </div>
+                    <div class="col">
+                        <input [(ngModel)]="PrecioMayoristaEditar" name="PrecioMayoristaEditar" type="number" formControlName="PrecioMayorista" class="form-control" placeholder="Precio Mayorista" aria-label="Last name">
+                    </div>
+                    <div class="col">
+                        <input [(ngModel)]="PrecioRevendedorEditar" name="PrecioRevendedorEditar" type="number" formControlName="PrecioRevendedor" class="form-control" placeholder="Precio Revendedor" aria-label="Last name">
+                    </div>
+                </div>
+                <div class="row mt-5">
+                    <div class="col">
+                        <select (change)="CapturarEsOferta($event)" id="inputState" class="form-select">
+                            <option [value]=0  selected>Esta en oferta</option>
+                            <option [value]=1 >Si</option>
+                            <option [value]=2 >No</option>
+                          </select>
+
+                    </div>
+                    <div class="col">
+                        <input type="number" [(ngModel)]="PrecioOfertaEditar" name="PrecioOfertaEditar" formControlName="PrecioOferta" class="form-control" placeholder="Precio Oferta" aria-label="Last name">
+                    </div>
+                    <div class="col">
+                        <input type="text" [(ngModel)]="codigoEditar" name="codigoEditar" formControlName="Codigo" class="form-control" placeholder="Codigo" aria-label="Last name">
+                    </div>
+                </div>
+                <div class="row mt-5">
+                    <div class="col">
+                        <select (change)="CapturarIdCategoria($event)" id="inputState" class="form-select">
+                            <option [value]=0  selected>Categoria</option>
+                            <option [value]=1 >Formal</option>
+                            <option [value]=2 >Casual</option>
+                            <option [value]=3 >Escolar</option>
+                            <option [value]=4 >Cuero</option>
+                          </select> </div>
+                    <div class="col">
+                        <select (change)="CapturarIdDepartamento($event)" id="inputState" class="form-select">
+                            <option [value]=0  selected>Departamento</option>
+                            <option [value]=1  >Calzado</option>
+                            <option [value]=2  >Ropa</option>
+                          </select> </div>
+                    <div class="col">
+                        <input (change)="handleImage($event)" type="file" class="form-control" placeholder="Foto" aria-label="Last name">
+                    </div>
+                </div>
+
+
+            </form>
+            <button *ngIf="!VieneEditar" (click)="GuardarProducto()" type="button" class="btn btn-primary col-1 mt-5">Guardar Producto</button>
+            <button *ngIf="VieneEditar" (click)="EditarProducto()" type="button" class="btn btn-primary col-1 mt-5">Guardar Producto</button>
+        </div>
+    </div>
+</div>

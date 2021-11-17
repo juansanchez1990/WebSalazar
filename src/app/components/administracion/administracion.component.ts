@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-administracion',
   templateUrl: './administracion.component.html',
-  styleUrls: ['./administracion.component.css']
+  styleUrls: ['./administracion.component.css', '../../../assets/bootstrap.min.css']
 })
 export class AdministracionComponent implements OnInit {
 

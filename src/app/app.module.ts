@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { NgbModule, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
@@ -21,6 +21,8 @@ import { ItemComponent } from './components/item/item.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { AdministracionComponent } from './components/administracion/administracion.component';
 import { DetallePedidoComponent } from './components/detalle-pedido/detalle-pedido.component';
+import { ItemsAdminComponent } from './components/items-admin/items-admin.component';
+import { AddItemComponent } from './components/items-admin/add-item/add-item.component';
 
 @NgModule({
   declarations: [
@@ -35,8 +37,13 @@ import { DetallePedidoComponent } from './components/detalle-pedido/detalle-pedi
     ItemComponent,
     CheckoutComponent,
     AdministracionComponent,
-    DetallePedidoComponent
+    DetallePedidoComponent,
+    ItemsAdminComponent,
+    AddItemComponent,
+    
+ 
   ],
+ 
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -44,6 +51,7 @@ import { DetallePedidoComponent } from './components/detalle-pedido/detalle-pedi
     AngularFireAuthModule,
     AngularFirestoreModule,
     ReactiveFormsModule,
+    NgbModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore())
   ],
@@ -51,3 +59,5 @@ import { DetallePedidoComponent } from './components/detalle-pedido/detalle-pedi
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
