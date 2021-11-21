@@ -57,7 +57,7 @@ export class AddItemComponent implements OnInit {
     this.addServices.ItemAEditar.subscribe(item=>{
       this.ItemsEditar = item
       if(this.ItemsEditar.length===0){
-
+        console.log('no Producto');
         this.codigoEditar=this.codigo
         this.ColorEditar=''
         this.DescripcionEditar=''
@@ -73,6 +73,7 @@ export class AddItemComponent implements OnInit {
 
       }
       else {
+        console.log('Producto');
         this.VieneEditar=true
 
         this.codigoEditar=this.ItemsEditar.Codigo
