@@ -34,4 +34,18 @@ export class ItemsAdminComponent implements OnInit {
     this.router.navigateByUrl('/AddItem');
 
   }
+
+
+  ActualizarDisponible(producto:any, number:number){
+    if(number ===1){
+      producto.Mostrar=true;
+
+    }
+    if(number ===0){
+      producto.Mostrar=false;
+
+    }
+    this.AddService.actualizarDisponible(producto);
+
+  }
 }

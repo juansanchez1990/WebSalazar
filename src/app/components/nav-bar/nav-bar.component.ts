@@ -68,9 +68,9 @@ this.Login();
   logout(){
     this.entro=localStorage.getItem('entroCliente')|| '';
     this.Confirm=false;
-    localStorage.removeItem('ShopCart');
-    localStorage.removeItem('Cliente');
+    localStorage.clear();
     this.LoginS.SignOut();
+    localStorage.clear();
   }
 
 }

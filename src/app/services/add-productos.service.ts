@@ -67,7 +67,7 @@ export class AddProductosService {
            PrecioOferta: producto.PrecioOferta,
            PrecioRevendedor: producto.PrecioRevendedor,
            Talla: producto.Talla,
-           Codigo:producto.Codigo+producto.Codigo,
+           Codigo:producto.Codigo,
            IdCategoria: producto.idCategoria,
            IdDepartamento: producto.IdDepartamento,
            Imagen: this.EditdownloadURL,
@@ -81,7 +81,9 @@ export class AddProductosService {
       return this.afs.collection("Productos").doc(producto.id).ref.update(Producto)
      }     
       
-
+     actualizarDisponible(producto:any) {
+      return this.afs.collection("Productos").doc(producto.id).ref.update(producto)
+    }
 private upLoadImage (nuevoProducto: any, image:any, Info:any){
   this.filePath = `ImagesItems/${image.name}`;
   const fileRef = this.storage.ref(this.filePath);

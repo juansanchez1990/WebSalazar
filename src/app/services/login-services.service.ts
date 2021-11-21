@@ -66,6 +66,7 @@ export class LoginServicesService {
     return this.afAuth.signOut().then(() => {
       this.Entro.next(false);
       localStorage.setItem('entroCliente', 'NoEntro') ;
+      localStorage.clear();
       Swal.fire({
         position: 'center',
         icon: 'success',

@@ -26,7 +26,7 @@
 
             <div *ngFor="let product of getProductosPorDepartamento() ">
 
-                <app-item class="col-md-3 col-sm-4" [productos]="product"></app-item>
+                <app-item *ngIf="product.Mostrar" class="col-md-3 col-sm-4" [productos]="product"></app-item>
             </div>
         </div>
     </div>

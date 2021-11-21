@@ -21,21 +21,26 @@
 
                 <div class="row mt-5">
                     <div class="col">
+                        <label for="formGroupExampleInput" class="form-label">Nombre del producto</label>
                         <input type="text" [(ngModel)]="NombreProductoEditar" name="NombreProductoEditar" formControlName="NombreProducto" class="form-control" placeholder="Nombre" aria-label="First name">
                     </div>
                     <div class="col">
+                        <label for="formGroupExampleInput" class="form-label">Descripción del producto</label>
                         <input type="text" [(ngModel)]="DescripcionEditar" name="DescripcionEditar" formControlName="Descripcion" class="form-control" placeholder="Descripción" aria-label="Last name">
                     </div>
                     <div class="col">
+                        <label for="formGroupExampleInput" class="form-label">Color del producto</label>
                         <input type="text" [(ngModel)]="ColorEditar" name="ColorEditar" formControlName="Color" class="form-control" placeholder="Color" aria-label="Last name">
                     </div>
                 </div>
 
                 <div class="row mt-5">
                     <div class="col">
+                        <label for="formGroupExampleInput" class="form-label">Talla del producto</label>
                         <input [(ngModel)]="TallaEditar" name="TallaEditar" formControlName="Talla" type="number" class="form-control" placeholder="Talla" aria-label="Last name">
                     </div>
                     <div class="col">
+                        <label for="formGroupExampleInput" class="form-label">Género</label>
                         <select (change)="CapturarIdGenero($event)" id="inputState" class="form-select">
                             <option [value]=0  selected>Genero</option>
                             <option [value]=1 >Hombre</option>
@@ -44,6 +49,7 @@
                         </select>
                     </div>
                     <div class="col">
+                        <label for="formGroupExampleInput" class="form-label">Mostrar en la Web</label>
                         <select (change)="CapturarMostrarWeb($event)" id="inputState" class="form-select">
                             <option [value]=0   selected>Mostrar en la Web</option>
                             <option [value]=1>Si</option>
@@ -52,17 +58,21 @@
                 </div>
                 <div class="row mt-5">
                     <div class="col">
+                        <label for="formGroupExampleInput" class="form-label">Precio al detalle</label>
                         <input [(ngModel)]="PrecioAlDetalleEditar" name="PrecioAlDetalleEditar" type="number" formControlName="PrecioAlDetalle" class="form-control" placeholder="Precio al Detalle" aria-label="First name">
                     </div>
                     <div class="col">
+                        <label for="formGroupExampleInput" class="form-label">Precio Mayorista</label>
                         <input [(ngModel)]="PrecioMayoristaEditar" name="PrecioMayoristaEditar" type="number" formControlName="PrecioMayorista" class="form-control" placeholder="Precio Mayorista" aria-label="Last name">
                     </div>
                     <div class="col">
+                        <label for="formGroupExampleInput" class="form-label">Precio Revendedor</label>
                         <input [(ngModel)]="PrecioRevendedorEditar" name="PrecioRevendedorEditar" type="number" formControlName="PrecioRevendedor" class="form-control" placeholder="Precio Revendedor" aria-label="Last name">
                     </div>
                 </div>
                 <div class="row mt-5">
                     <div class="col">
+                        <label for="formGroupExampleInput" class="form-label">Está en oferta?</label>
                         <select (change)="CapturarEsOferta($event)" id="inputState" class="form-select">
                             <option [value]=0  selected>Esta en oferta</option>
                             <option [value]=1 >Si</option>
@@ -71,14 +81,17 @@
 
                     </div>
                     <div class="col">
+                        <label for="formGroupExampleInput" class="form-label">Precio de Oferta</label>
                         <input type="number" [(ngModel)]="PrecioOfertaEditar" name="PrecioOfertaEditar" formControlName="PrecioOferta" class="form-control" placeholder="Precio Oferta" aria-label="Last name">
                     </div>
                     <div class="col">
+                        <label for="formGroupExampleInput" class="form-label">Código del producto</label>
                         <input type="text" [(ngModel)]="codigoEditar" name="codigoEditar" formControlName="Codigo" class="form-control" placeholder="Codigo" aria-label="Last name">
                     </div>
                 </div>
                 <div class="row mt-5">
                     <div class="col">
+                        <label for="formGroupExampleInput" class="form-label">Categoría del producto</label>
                         <select (change)="CapturarIdCategoria($event)" id="inputState" class="form-select">
                             <option [value]=0  selected>Categoria</option>
                             <option [value]=1 >Formal</option>
@@ -87,12 +100,14 @@
                             <option [value]=4 >Cuero</option>
                           </select> </div>
                     <div class="col">
+                        <label for="formGroupExampleInput" class="form-label">Departamento del producto</label>
                         <select (change)="CapturarIdDepartamento($event)" id="inputState" class="form-select">
                             <option [value]=0  selected>Departamento</option>
                             <option [value]=1  >Calzado</option>
                             <option [value]=2  >Ropa</option>
                           </select> </div>
                     <div class="col">
+                        <label for="formGroupExampleInput" class="form-label">Imagen del producto</label>
                         <input (change)="handleImage($event)" type="file" class="form-control" placeholder="Foto" aria-label="Last name">
                     </div>
                 </div>

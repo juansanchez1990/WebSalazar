@@ -21,7 +21,8 @@
                     <h4 class="text-center">{{producto.NombreProducto}}</h4>
                     <div class="card_content">
                         <button (click)="EnviarItemEditar(producto)" type="button" class="btn btn-danger col-6 ">Editar</button>
-                        <button type="button" class="btn btn-warning col-6 ">Mostrar</button>
+                        <button *ngIf="!producto.Mostrar" (click)="ActualizarDisponible(producto, 1)" type="button" class="btn btn-success col-6 ">Mostrar</button>
+                        <button *ngIf="producto.Mostrar" (click)="ActualizarDisponible(producto, 0)" type="button" class="btn btn-warning col-6 ">Ocultar</button>
                     </div>
                 </div>
             </li>

@@ -58,7 +58,7 @@ export class AddItemComponent implements OnInit {
       this.ItemsEditar = item
       if(this.ItemsEditar.length===0){
 
-        this.codigoEditar=''
+        this.codigoEditar=this.codigo
         this.ColorEditar=''
         this.DescripcionEditar=''
         this.NombreProductoEditar=''
@@ -169,18 +169,23 @@ export class AddItemComponent implements OnInit {
 
     let InfoIds={
 
-      Codigo:  this.idCategoria,
+      idCategoria: this.idCategoria,
+      idDepartamento:  this.idDepartamento,
+       idGenero:  this.idGenero,
+       MostrarWeb: this.MostrarWeb,
+       EstaEnOferta: this.EstaEnOferta
+
     
     }
 this.addServices.preAddUpDateProducto(this.RegistroProducto.value, this.image, InfoIds)
    
   }
   EditarProducto(){
-
+    console.log('Codigo',this.codigoEditar)
     let ItemEditar={
 
       idCategoria:  this.IdCategoriaEditar,
-      Codigo:  this.codigoEditar,
+      Codigo:  this.RegistroProducto.controls['Codigo'].value,
       Color:this.RegistroProducto.controls['Color'].value,
       Descripcion:this.RegistroProducto.controls['Descripcion'].value,
       EsOferta: this.EsOfertaEditar,
@@ -202,5 +207,7 @@ this.addServices.preAddUpDateProducto(this.RegistroProducto.value, this.image, I
 this.addServices.actualizar(ItemEditar, this.image)
    
   }
+
+ 
 
 }
