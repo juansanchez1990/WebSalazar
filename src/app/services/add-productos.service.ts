@@ -11,10 +11,19 @@ export class AddProductosService {
   private downloadURL!:Observable<any>;
   private EditdownloadURL!:Observable<any>;
   private filePath: any;
+ 
   public ItemAEditar = new BehaviorSubject([]);
   constructor(private storage: AngularFireStorage,
-              private afs: AngularFirestore) { }
+              private afs: AngularFirestore) { 
 
+                this.IdProductosCollection = afs.collection<any>('IdProductos')
+                this.IdProductos = this.IdProductosCollection.valueChanges();
+
+              }
+
+IdProductosCollection: AngularFirestoreCollection<any[]>;
+IdProductos: Observable<any[]>;
+            
    public preAddUpDateProducto(Producto: any, image:any, Info:any ): void{
                 this.upLoadImage(Producto, image, Info);
       }  
@@ -84,6 +93,10 @@ export class AddProductosService {
      actualizarDisponible(producto:any) {
       return this.afs.collection("Productos").doc(producto.id).ref.update(producto)
     }
+    GetIdProductos(){
+      return this.IdProductos;
+    }
+
 private upLoadImage (nuevoProducto: any, image:any, Info:any){
   this.filePath = `ImagesItems/${image.name}`;
   const fileRef = this.storage.ref(this.filePath);
@@ -104,6 +117,7 @@ registrar(producto: any, Info:any ) {
   var id = this.afs.createId();
 
    const ProductoObject = {
+     idProducto:Info.NumeroProducto,
      Color: producto.Color,
      Descripcion: producto.Descripcion,
      EsOferta: Info.EstaEnOferta,
@@ -115,15 +129,25 @@ registrar(producto: any, Info:any ) {
      PrecioOferta: producto.PrecioOferta,
      PrecioRevendedor: producto.PrecioRevendedor,
      Talla: producto.Talla,
-     Codigo:Info.Codigo+producto.Codigo,
+     Codigo:producto.Codigo,
      IdCategoria: Info.idCategoria,
      IdDepartamento: Info.idDepartamento,
      Imagen: this.downloadURL,
      fileRef: this.filePath,
      id: id
 };
+this.actualizarIdProducto(Info.idProducto, Info.NumeroProducto)
 return this.afs.collection("Productos").doc(id).ref.set(Object.assign(ProductoObject, { id: id }));
 }
+
+actualizarIdProducto(idProducto:any, NumeroProducto:any) {
+  let ProductoNumber ={
+    IdProducto:NumeroProducto,
+    id:idProducto
+  }
+  return this.afs.collection("IdProductos").doc(idProducto).ref.update(ProductoNumber);
+ }
+
 
 EnviarItemEditar(Item:any){
   this.ItemAEditar.next(Item);

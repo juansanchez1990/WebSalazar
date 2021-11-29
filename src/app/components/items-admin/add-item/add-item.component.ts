@@ -15,8 +15,10 @@ export class AddItemComponent implements OnInit {
   private idGenero: number | undefined
   private MostrarWeb!: boolean
   private EstaEnOferta!: boolean
+  ProductoId!:number;
+  NumeroProducto!:number;
   ItemsEditar:any=[]
-  codigo:string='00107000'
+  codigo:string=''
   Color = new FormControl('', [Validators.minLength(5), Validators.required]);
   Descripcion = new FormControl('', [Validators.minLength(5), Validators.required]);
   NombreProducto = new FormControl('', [Validators.minLength(5), Validators.required]);
@@ -54,6 +56,10 @@ export class AddItemComponent implements OnInit {
   constructor(private addServices:AddProductosService) { }
 
   ngOnInit() {
+
+  
+this.getIdProducto()
+
     this.addServices.ItemAEditar.subscribe(item=>{
       this.ItemsEditar = item
       if(this.ItemsEditar.length===0){
@@ -115,7 +121,15 @@ export class AddItemComponent implements OnInit {
   }
 
   
+getIdProducto(){
+  this.addServices.GetIdProductos().subscribe(data=>{
+    let ProductoNumero = data
+    this.NumeroProducto = ProductoNumero[0].IdProducto
+    this.ProductoId=ProductoNumero[0].id
+    console.log('idNumeroPedido', this.NumeroProducto)
 
+  })
+}
 
   handleImage(event: any): void {
     this.image = event.target.files[0];
@@ -169,9 +183,10 @@ export class AddItemComponent implements OnInit {
   GuardarProducto(){
 
     let InfoIds={
-
-      idCategoria: this.idCategoria,
-      idDepartamento:  this.idDepartamento,
+       NumeroProducto : this.NumeroProducto+1,
+        idProducto: this.ProductoId,
+       idCategoria: this.idCategoria,
+       idDepartamento:  this.idDepartamento,
        idGenero:  this.idGenero,
        MostrarWeb: this.MostrarWeb,
        EstaEnOferta: this.EstaEnOferta
@@ -179,12 +194,13 @@ export class AddItemComponent implements OnInit {
     
     }
 this.addServices.preAddUpDateProducto(this.RegistroProducto.value, this.image, InfoIds)
+this.getIdProducto()
    
   }
   EditarProducto(){
     console.log('Codigo',this.codigoEditar)
     let ItemEditar={
-
+      
       idCategoria:  this.IdCategoriaEditar,
       Codigo:  this.RegistroProducto.controls['Codigo'].value,
       Color:this.RegistroProducto.controls['Color'].value,

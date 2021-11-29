@@ -3,10 +3,10 @@
         <img src="{{productos.Imagen}}" alt="new-arrivals images">
         <div class="single-new-arrival-bg-overlay"></div>
 
-        <div (click)="traerProducto(productos)" class="new-arrival-cart">
+        <div class="new-arrival-cart">
             <p>
-                <span class="lnr lnr-cart"></span>
-                <a>add <span>to </span> cart</a>
+
+                <a>Ver <span>más </span> detalles</a>
             </p>
         </div>
     </div>
@@ -18,4 +18,6 @@
     <button style="margin-left: 1.5em;" [disabled]="!hayCantidad" type="button" class="btn btn-danger m-5" (click)="restarProducto()"><i class="fa fa-minus"></i></button>
     <button style="margin-left: 1.5em;" type="button" class="btn btn-danger m-5" (click)="sumProductos()"><i class="fa fa-plus"></i></button>
     <div style="margin-left: 1.5em;" class="text-center"> {{counter}} </div>
+    <button [disabled]="!hayCantidad" style="margin-left: 1.5em;" (click)="traerProducto(productos)" type="button" class="btn btn-success"><i class="fa fa-cart-plus"></i></button>
+
 </div>
