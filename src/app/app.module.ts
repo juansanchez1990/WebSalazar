@@ -23,6 +23,7 @@ import { AdministracionComponent } from './components/administracion/administrac
 import { DetallePedidoComponent } from './components/detalle-pedido/detalle-pedido.component';
 import { ItemsAdminComponent } from './components/items-admin/items-admin.component';
 import { AddItemComponent } from './components/items-admin/add-item/add-item.component';
+import { DetalleProductoComponent } from './components/detalle-producto/detalle-producto.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { AddItemComponent } from './components/items-admin/add-item/add-item.com
     DetallePedidoComponent,
     ItemsAdminComponent,
     AddItemComponent,
+    DetalleProductoComponent,
     
  
   ],

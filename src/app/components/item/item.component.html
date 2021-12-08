@@ -6,18 +6,11 @@
         <div class="new-arrival-cart">
             <p>
 
-                <a>Ver <span>más </span> detalles</a>
+                <a (click)="enviarDetalleProducto(productos)">Ver <span>más </span> detalles</a>
             </p>
         </div>
     </div>
     <h5>{{productos.NombreProducto}}</h5>
-    <h6 *ngIf="ClienteNormal!=1 && ClienteRevendedor!=2 && ClienteMayorista!=3">L. {{productos.PrecioAlDetalle}}</h6>
-    <h6 *ngIf="ClienteNormal===1 && HayCliente">L. {{productos.PrecioAlDetalle}}</h6>
-    <h6 *ngIf="ClienteRevendedor===2 && HayCliente">L. {{productos.PrecioRevendedor}}</h6>
-    <h6 *ngIf="ClienteMayorista===3 && HayCliente">L. {{productos.PrecioMayorista}}</h6>
-    <button style="margin-left: 1.5em;" [disabled]="!hayCantidad" type="button" class="btn btn-danger m-5" (click)="restarProducto()"><i class="fa fa-minus"></i></button>
-    <button style="margin-left: 1.5em;" type="button" class="btn btn-danger m-5" (click)="sumProductos()"><i class="fa fa-plus"></i></button>
-    <div style="margin-left: 1.5em;" class="text-center"> {{counter}} </div>
-    <button [disabled]="!hayCantidad" style="margin-left: 1.5em;" (click)="traerProducto(productos)" type="button" class="btn btn-success"><i class="fa fa-cart-plus"></i></button>
+
 
 </div>

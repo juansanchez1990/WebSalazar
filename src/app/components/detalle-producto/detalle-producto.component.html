@@ -1,0 +1,61 @@
+<br>
+
+<br>
+<br>
+<div class="container">
+    <div class="new-arrivals-content ">
+
+        <div class="row">
+
+            <div class="col-sm-6">
+
+                <img [src]="productos.Imagen" class="imagen" alt="...">
+            </div>
+            <br>
+            <br>
+            <br>
+            <div class="col-sm-4">
+                <div class="alert alert-info" role="alert">
+                    <h1 class="text-center">Detalle del producto</h1>
+                </div>
+                <h2> <em>Nombre del producto:</em> <strong> {{productos.NombreProducto}}</strong> </h2>
+                <br>
+                <h2><em>Color:</em><strong> {{productos.Color}}</strong> </h2>
+                <br>
+
+                <select (change)="onChange($any($event.target).value)" class="form-control col-xs-3">
+                    <option [value] = 0>Elija la talla</option>
+                    <option [value] = 35>35</option>
+                    <option [value] = 36>36</option>
+                    <option [value] = 37>37</option>
+                    <option [value] = 38>38</option>
+                    <option [value] = 39>39</option>
+                    <option [value] = 40>40</option>
+                  </select>
+                <br>
+                <br>
+                <h6 *ngIf="ClienteNormal!=1 && ClienteRevendedor!=2 && ClienteMayorista!=3">Precio: <strong>L. {{productos.PrecioAlDetalle}}</strong></h6>
+                <h6 *ngIf="ClienteNormal===1 && HayCliente"><em>Precio:</em> <strong> L. {{productos.PrecioAlDetalle}}</strong> </h6>
+                <h6 *ngIf="ClienteRevendedor===2 && HayCliente"><em>Precio: </em><strong> L. {{productos.PrecioRevendedor}}</strong> </h6>
+                <h6 *ngIf="ClienteMayorista===3 && HayCliente"><em>Precio:</em> <strong> L. {{productos.PrecioMayorista}}</strong> </h6>
+                <br>
+                <h2 style="margin-left: 1.5em;"><em>Cantidad:</em></h2>
+                <br>
+                <div style="margin-left: 3.5em;">
+                    <h2><strong>{{counter}}</strong></h2>
+                </div>
+                <br>
+                <button style="margin-left: 1.5em;" [disabled]="!hayCantidad" type="button" class="btn btn-danger m-5" (click)="restarProducto()"><i class="fa fa-minus"></i></button>
+                <button style="margin-left: 1.5em;" type="button" class="btn btn-danger m-5" (click)="sumProductos()"><i class="fa fa-plus"></i></button>
+                <br>
+                <br>
+                <button [disabled]="!hayCantidad" style="margin-left: 3em;" (click)="traerProducto(productos)" type="button" class="btn btn-success"><i class="fa fa-cart-plus"></i></button>
+
+            </div>
+
+
+        </div>
+    </div>
+
+</div>
+<app-footer></app-footer>

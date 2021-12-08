@@ -22,21 +22,25 @@ export class AddItemComponent implements OnInit {
   Color = new FormControl('', [Validators.minLength(5), Validators.required]);
   Descripcion = new FormControl('', [Validators.minLength(5), Validators.required]);
   NombreProducto = new FormControl('', [Validators.minLength(5), Validators.required]);
+  Referencia= new FormControl('', [Validators.minLength(5), Validators.required]);
   PrecioAlDetalle = new FormControl('', [Validators.minLength(5), Validators.required]);
   PrecioMayorista = new FormControl('', [Validators.minLength(5), Validators.required]);
   PrecioOferta = new FormControl('', [Validators.minLength(5), Validators.required]);
   PrecioRevendedor = new FormControl('', [Validators.minLength(5), Validators.required]);
+  Stock = new FormControl('', [Validators.minLength(5), Validators.required]);
   Talla = new FormControl('', [Validators.minLength(5), Validators.required]);
   Codigo = new FormControl('', [Validators.minLength(5), Validators.required]);
   imagen = new FormControl('', [Validators.minLength(2), Validators.required]);
   VieneEditar:boolean=false
   codigoEditar!:string
   ColorEditar!:string
+  ReferenciaEditar!:string
   DescripcionEditar!:string
   NombreProductoEditar!:string
   PrecioAlDetalleEditar!:number
   PrecioMayoristaEditar!:number
   PrecioOfertaEditar!:number
+  StockEditar!:number
   PrecioRevendedorEditar!:number
   TallaEditar!:number
   GeneroEditar:any
@@ -68,6 +72,7 @@ this.getIdProducto()
         this.ColorEditar=''
         this.DescripcionEditar=''
         this.NombreProductoEditar=''
+        this.ReferenciaEditar=''
         this.PrecioAlDetalleEditar=0
         this.PrecioMayoristaEditar=0
         this.PrecioOfertaEditar=0
@@ -92,6 +97,7 @@ this.getIdProducto()
         this.PrecioRevendedorEditar=this.ItemsEditar.PrecioRevendedor
         this.TallaEditar=this.ItemsEditar.Talla
         this.GeneroEditar=this.ItemsEditar.Genero
+        this.ReferenciaEditar=this.ItemsEditar.ReferenciaEditar
         this.EsOfertaEditar=this.ItemsEditar.EsOferta
         this.IdCategoriaEditar=this.ItemsEditar.IdCategoria
         this.IdDepartamentoEditar=this.ItemsEditar.IdDepartamento
@@ -114,6 +120,8 @@ this.getIdProducto()
       Talla: this.Talla,
       Codigo: this.Codigo,
       imagen: this.imagen,
+      Referencia: this.Referencia,
+      Stock: this.Stock,
 
 
 

@@ -5,10 +5,8 @@
 
 <br>
 
-<br>
-<br>
 
-<br>
+
 
 <div class="m-5">
 
@@ -31,6 +29,10 @@
                     <div class="col">
                         <label for="formGroupExampleInput" class="form-label">Color del producto</label>
                         <input type="text" [(ngModel)]="ColorEditar" name="ColorEditar" formControlName="Color" class="form-control" placeholder="Color" aria-label="Last name">
+                    </div>
+                    <div class="col">
+                        <label for="formGroupExampleInput" class="form-label">Stock</label>
+                        <input type="text" [(ngModel)]="StockEditar" name="ColorEditar" formControlName="Stock" class="form-control" placeholder="Stock" aria-label="Last name">
                     </div>
                 </div>
 
@@ -88,6 +90,10 @@
                         <label for="formGroupExampleInput" class="form-label">Código del producto</label>
                         <input type="text" [(ngModel)]="codigoEditar" name="codigoEditar" formControlName="Codigo" class="form-control" placeholder="Codigo" aria-label="Last name">
                     </div>
+                    <div class="col">
+                        <label for="formGroupExampleInput" class="form-label">Referencia del producto</label>
+                        <input type="text" [(ngModel)]="ReferenciaEditar" name="ReferenciaEditar" formControlName="Referencia" class="form-control" placeholder="Codigo" aria-label="Last name">
+                    </div>
                 </div>
                 <div class="row mt-5">
                     <div class="col">
@@ -96,8 +102,8 @@
                             <option [value]=0  selected>Categoria</option>
                             <option [value]=1 >Formal</option>
                             <option [value]=2 >Casual</option>
-                            <option [value]=3 >Escolar</option>
-                            <option [value]=4 >Cuero</option>
+                            <option [value]=3 >Tenis</option>
+                            <option [value]=4 >Sandalias</option>
                           </select> </div>
                     <div class="col">
                         <label for="formGroupExampleInput" class="form-label">Departamento del producto</label>

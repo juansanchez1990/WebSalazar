@@ -14,6 +14,7 @@ export class ShoeService {
   public Total = 0;
   public ItemAComprar = new BehaviorSubject([]);
   DetallePedido = new BehaviorSubject([]);
+  DetalleProducto = new BehaviorSubject([]);
   IdPedido= new BehaviorSubject<any>('');
   public itemLocalStorage : any;
   today = new Date();
@@ -122,6 +123,9 @@ console.log('Item', Item)
 
    }
 
+   sendDetailproduct(Producto:any){
+     this.DetalleProducto.next(Producto);
+   }
 
 SendPedido(Contacto:any, Items:any,NumeroPedido:any, Total:any, RecogerTienda:any, idNumeroPedido:any){
   var id = this.afs.createId();

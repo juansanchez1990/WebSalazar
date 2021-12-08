@@ -67,6 +67,7 @@ IdProductos: Observable<any[]>;
         const Producto = {
            Color: producto.Color,
            Descripcion: producto.Descripcion,
+           Referencia: producto.Referencia,
            EsOferta: producto.EsOferta,
            Genero: producto.Genero,
            Mostrar: producto.Mostrar,
@@ -119,6 +120,7 @@ registrar(producto: any, Info:any ) {
    const ProductoObject = {
      idProducto:Info.NumeroProducto,
      Color: producto.Color,
+     Referencia: producto.Referencia,
      Descripcion: producto.Descripcion,
      EsOferta: Info.EstaEnOferta,
      Genero: Info.idGenero,
